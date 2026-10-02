@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Submit your game · ORVENFY</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0B0C0F;--panel:#131418;--line:#26282F;--ink:#F2F2F4;--mute:#A3A5AD;--or:#F07A30;--or2:#C0562A;color-scheme:dark;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px);background:var(--bg)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.7 Inter,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;position:relative;overflow-x:hidden}
+.deco{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.deco i{position:absolute;display:block;transform-origin:center}
+.d1{top:-40px;left:-60px;width:260px;height:2px;background:var(--or);transform:rotate(-50deg) translate(40px,60px)}
+.d2{top:30px;left:70px;width:120px;height:26px;background:#25262b;transform:rotate(-50deg)}
+.d3{bottom:60px;right:-70px;width:330px;height:2px;background:var(--or);transform:rotate(-50deg)}
+.d4{bottom:20px;right:-40px;width:330px;height:26px;background:#1c1d22;transform:rotate(-50deg)}
+.wrap{position:relative;z-index:1;max-width:760px;margin:0 auto;padding:22px 20px 64px}
+.topbar{width:78px;height:5px;border-radius:3px;background:var(--or);margin:0 auto 26px;box-shadow:0 0 14px rgba(240,122,48,.5)}
+.panel{position:relative;background:var(--panel);border:1px solid var(--line);border-radius:28px;padding:30px 28px}
+.panel::before,.search::before{content:"";position:absolute;left:-1px;top:22%;height:56%;width:4px;border-radius:3px;background:var(--or);box-shadow:0 0 14px rgba(240,122,48,.6)}
+.lbl{color:var(--or);font-weight:700;letter-spacing:.2em;font-size:15px;text-transform:uppercase}
+h1{font-size:clamp(30px,6vw,42px);line-height:1.15;font-weight:800;margin:6px 0 14px}
+h1 span{display:block}
+.lead{color:var(--mute);margin:0 0 24px}
+.tbtn{font:inherit;font-weight:600;color:var(--or);background:transparent;border:1.5px solid #8A4520;border-radius:16px;padding:12px 22px;cursor:pointer}
+.tbtn:hover{border-color:var(--or)}
+button:focus-visible,a:focus-visible{outline:3px solid var(--or);outline-offset:3px}
+.ctawrap{position:relative;display:inline-block;margin:34px 34px 0 0}
+.ctawrap::after{content:"";position:absolute;right:-30px;top:2px;bottom:2px;width:30px;border:1.5px solid var(--or2);border-left:0;border-radius:0 20px 20px 0}
+.cta{display:block;background:linear-gradient(180deg,#E9803D,#BD532A);color:#fff;font-weight:700;font-size:20px;text-decoration:none;padding:20px 34px;border-radius:20px 0 0 20px;clip-path:polygon(0 0,calc(100% - 22px) 0,100% 22px,100% calc(100% - 22px),calc(100% - 22px) 100%,0 100%);box-shadow:0 8px 30px rgba(240,122,48,.25);text-shadow:0 2px 4px rgba(0,0,0,.35)}
+h2{font-size:26px;line-height:1.2;font-weight:800;margin:60px 0 6px;padding-left:16px;border-left:4px solid var(--or)}
+p.sub{color:var(--mute);margin:0 0 20px}
+.list{background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:6px 22px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:4px 20px;padding:15px 0;border-bottom:1px solid var(--line)}
+.row:last-child{border:0}
+.row b{color:var(--or);font-weight:700}
+.row span{color:var(--mute)}
+.plat{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:20px;border-top:3px solid #3a3c44}
+.card.m,.card.p{border-top-color:var(--or)}
+.card h3{margin:0 0 6px;font-size:19px}
+.card p{margin:0;color:var(--mute);font-size:15.5px;line-height:1.6}
+.note{margin-top:16px;padding:18px 20px;border:1px solid #6B3A1C;background:rgba(240,122,48,.07);border-radius:18px;color:#d6c5b8;font-size:15.5px;line-height:1.65}
+ol{padding:0;margin:0;list-style:none;counter-reset:s}
+ol li{counter-increment:s;display:grid;grid-template-columns:48px 1fr;gap:14px;padding:12px 0;align-items:start}
+ol li::before{content:counter(s);width:44px;height:44px;border:1.5px solid var(--or);border-radius:14px;display:grid;place-items:center;color:var(--or);font-weight:800;font-size:20px;background:var(--panel)}
+ol li b{display:block}ol li span{color:var(--mute)}
+.contact{margin-top:60px}
+.contact h2{margin-top:0}
+.contact p{color:var(--mute);margin:0}
+.handle{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin:18px 0}
+.handle a{font-size:28px;font-weight:800;color:var(--ink);text-decoration:none;border-bottom:3px solid var(--or)}
+pre{background:#0B0C0F;border:1px solid var(--line);border-radius:16px;padding:16px;margin:12px 0 0;white-space:pre-wrap;font:15px/1.7 Consolas,Menlo,monospace;color:#d8d9de;overflow-x:auto}
+footer{margin-top:36px;color:var(--mute);font-size:14px}
+@media (max-width:560px){.row{grid-template-columns:1fr}.panel{padding:26px 22px}}
+</style>
+</head>
+<body>
+<div class="deco" aria-hidden="true"><i class="d1"></i><i class="d2"></i><i class="d3"></i><i class="d4"></i></div>
+<div class="wrap">
+<div class="topbar"></div>
+<section class="panel">
+  <div class="lbl" data-i="lbl">Submit a game</div>
+  <h1 data-i="h1">Your game, <span>on our site.</span></h1>
+  <p class="lead" data-i="lead"></p>
+  <button class="tbtn" id="tr">🌐 <span data-i="tr">Traducir al español</span></button>
+</section>
+<div class="ctawrap"><a class="cta" href="https://instagram.com/orvenfy.io" data-i="cta">Send us a DM on Instagram</a></div>
+
+<h2 data-i="t1">What to send us</h2>
+<p class="sub" data-i="s1">Send everything in one message so we can publish faster.</p>
+<div class="list">
+  <div class="row"><b data-i="f1">Game link</b><span data-i="d1">The direct link where people play or download your game.</span></div>
+  <div class="row"><b data-i="f2">Game name</b><span data-i="d2">The exact title you want shown on the page.</span></div>
+  <div class="row"><b data-i="f3">Cover image</b><span data-i="d3">Send your own. If you don't have one, we will design a cover that fits your game's style.</span></div>
+  <div class="row"><b data-i="f4">Description</b><span data-i="d4">A few lines about what the game is and how it plays.</span></div>
+  <div class="row"><b data-i="f5">Category</b><span data-i="d5">Action, puzzle, racing, adventure, etc.</span></div>
+  <div class="row"><b data-i="f6">Platform</b><span data-i="d6">Mobile only, PC only, or both. See the next section.</span></div>
+</div>
+
+<h2 data-i="t2">Which platform is your game for?</h2>
+<p class="sub" data-i="s2">Players need to know this before they click Play.</p>
+<div class="plat">
+  <div class="card m"><h3 data-i="pm">Mobile only</h3><p data-i="pmd">Built for touch screens. Best played on a phone or tablet.</p></div>
+  <div class="card p"><h3 data-i="pp">PC only</h3><p data-i="ppd">Built for keyboard, mouse or a gamepad. Best played on a computer.</p></div>
+  <div class="card"><h3 data-i="pb">Both</h3><p data-i="pbd">Works well with touch and with computer controls.</p></div>
+</div>
+<div class="note" data-i="note">Some game makers and apps create games only for phones. They can still open on a computer, but they are harder to play: the touch controls don't connect with the keyboard or mouse, so buttons and gestures may not respond well. Tell us honestly which devices your game works best on, and we will label it so players know what to expect.</div>
+
+<h2 data-i="t3">How it works</h2>
+<ol>
+  <li><div><b data-i="h1a">You send the details</b><span data-i="h1b">Message us on Instagram with the six items above.</span></div></li>
+  <li><div><b data-i="h2a">We review it</b><span data-i="h2b">We check that the link works and the info is complete. If something is missing, we will ask.</span></div></li>
+  <li><div><b data-i="h3a">We publish it</b><span data-i="h3b">Your game goes on our games page with its cover, description, category, platform label and a short how-to-play guide.</span></div></li>
+</ol>
+
+<section class="contact panel">
+  <h2 data-i="t4">Contact</h2>
+  <p data-i="c1">Send your submission by direct message on Instagram.</p>
+  <div class="handle">
+    <a href="https://instagram.com/orvenfy.io">@orvenfy.io</a>
+    <button class="tbtn" id="copy" data-i="copy">Copy username</button>
+  </div>
+  <p data-i="c2">Not sure how to write it? Copy this template:</p>
+  <pre id="tpl"></pre>
+  <button class="tbtn" id="copyt" style="margin-top:14px" data-i="copyt">Copy template</button>
+</section>
+
+<footer data-i="foot">We reserve the right to decline games that are broken, unsafe or that you don't have the right to share.</footer>
+</div>
+
+<script>
+var T={
+en:{lbl:"SUBMIT A GAME",tr:"Traducir al español",h1:"Your game, <span>on our site.</span>",lead:"We publish games made by other creators. Send us the details below and we will add your game to our games page, with a short guide so players know how to start.",cta:"Send us a DM on Instagram",t1:"What to send us",s1:"Send everything in one message so we can publish faster.",f1:"Game link",d1:"The direct link where people play or download your game.",f2:"Game name",d2:"The exact title you want shown on the page.",f3:"Cover image",d3:"Send your own. If you don't have one, we will design a cover that fits your game's style.",f4:"Description",d4:"A few lines about what the game is and how it plays.",f5:"Category",d5:"Action, puzzle, racing, adventure, etc.",f6:"Platform",d6:"Mobile only, PC only, or both. See the next section.",t2:"Which platform is your game for?",s2:"Players need to know this before they click Play.",pm:"Mobile only",pmd:"Built for touch screens. Best played on a phone or tablet.",pp:"PC only",ppd:"Built for keyboard, mouse or a gamepad. Best played on a computer.",pb:"Both",pbd:"Works well with touch and with computer controls.",note:"Some game makers and apps create games only for phones. They can still open on a computer, but they are harder to play: the touch controls don't connect with the keyboard or mouse, so buttons and gestures may not respond well. Tell us honestly which devices your game works best on, and we will label it so players know what to expect.",t3:"How it works",h1a:"You send the details",h1b:"Message us on Instagram with the six items above.",h2a:"We review it",h2b:"We check that the link works and the info is complete. If something is missing, we will ask.",h3a:"We publish it",h3b:"Your game goes on our games page with its cover, description, category, platform label and a short how-to-play guide.",t4:"Contact",c1:"Send your submission by direct message on Instagram.",c2:"Not sure how to write it? Copy this template:",copy:"Copy username",copyt:"Copy template",done:"Copied!",foot:"We reserve the right to decline games that are broken, unsafe or that you don't have the right to share.",
+tpl:"Game name:\nLink:\nCover: (attached / please design one)\nDescription:\nCategory:\nPlatform: (Mobile / PC / Both)"},
+es:{lbl:"ENVÍA TU JUEGO",tr:"Translate to English",h1:"Tu juego, <span>en nuestra página.</span>",lead:"Publicamos juegos hechos por otros creadores. Envíanos los datos de abajo y agregaremos tu juego a nuestra página de juegos, con una guía corta para que los jugadores sepan cómo empezar.",cta:"Escríbenos por DM en Instagram",t1:"Qué debes enviarnos",s1:"Mándalo todo en un solo mensaje para publicar más rápido.",f1:"Link del juego",d1:"El enlace directo donde la gente juega o descarga tu juego.",f2:"Nombre del juego",d2:"El título exacto que quieres que aparezca en la página.",f3:"Portada",d3:"Envía la tuya. Si no tienes una, diseñaremos una portada acorde al estilo de tu juego.",f4:"Descripción",d4:"Unas líneas sobre qué es el juego y cómo se juega.",f5:"Categoría",d5:"Acción, puzzle, carreras, aventura, etc.",f6:"Plataforma",d6:"Solo celular, solo computador o ambos. Mira la siguiente sección.",t2:"¿Para qué plataforma es tu juego?",s2:"Los jugadores necesitan saberlo antes de darle a Jugar.",pm:"Solo celular",pmd:"Hecho para pantallas táctiles. Se juega mejor en un teléfono o tablet.",pp:"Solo computador",ppd:"Hecho para teclado, mouse o control. Se juega mejor en un computador.",pb:"Ambos",pbd:"Funciona bien con pantalla táctil y con controles de computador.",note:"Algunas plataformas y aplicaciones crean juegos pensados solo para celulares. Aunque se pueden abrir en un computador, son más difíciles de jugar: los controles táctiles no se vinculan con el teclado ni el mouse, así que los botones y gestos pueden no responder bien. Dinos con honestidad en qué dispositivos funciona mejor tu juego y lo etiquetaremos para que los jugadores sepan qué esperar.",t3:"Cómo funciona",h1a:"Tú envías los datos",h1b:"Escríbenos por Instagram con los seis puntos de arriba.",h2a:"Lo revisamos",h2b:"Verificamos que el link funcione y que la información esté completa. Si falta algo, te preguntamos.",h3a:"Lo publicamos",h3b:"Tu juego sale en nuestra página de juegos con su portada, descripción, categoría, etiqueta de plataforma y una guía corta de cómo jugar.",t4:"Contacto",c1:"Envía tu solicitud por mensaje directo en Instagram.",c2:"¿No sabes cómo escribirlo? Copia esta plantilla:",copy:"Copiar usuario",copyt:"Copiar plantilla",done:"¡Copiado!",foot:"Nos reservamos el derecho de rechazar juegos que no funcionen, sean inseguros o que no tengas derecho a compartir.",
+tpl:"Nombre del juego:\nLink:\nPortada: (adjunta / por favor diseñen una)\nDescripción:\nCategoría:\nPlataforma: (Celular / Computador / Ambos)"}
+};
+var cur="en";
+function set(l){cur=l;document.documentElement.lang=l;
+document.querySelectorAll("[data-i]").forEach(function(e){e.innerHTML=T[l][e.dataset.i]});
+document.getElementById("tpl").textContent=T[l].tpl;
+try{localStorage.setItem("lang",l)}catch(e){}}
+function cp(txt,btn,key){
+function ok(){btn.textContent=T[cur].done;setTimeout(function(){btn.textContent=T[cur][key]},1500)}
+function fb(){var a=document.createElement("textarea");a.value=txt;a.style.position="fixed";a.style.opacity="0";document.body.appendChild(a);a.select();try{document.execCommand("copy")}catch(e){}document.body.removeChild(a);ok()}
+if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(txt).then(ok,fb)}else{fb()}}
+document.getElementById("tr").onclick=function(){set(cur=="en"?"es":"en")};
+document.getElementById("copy").onclick=function(){cp("@orvenfy.io",this,"copy")};
+document.getElementById("copyt").onclick=function(){cp(T[cur].tpl,this,"copyt")};
+var s="en";try{s=localStorage.getItem("lang")||"en"}catch(e){}
+set(s=="es"?"es":"en");
+</script>
+</body>
+</html>
